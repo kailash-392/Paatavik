@@ -1,0 +1,7 @@
+.placesImg{
+    background-image: url("../images/india_cover.jpg");
+    background-size: cover;
+    min-width: 1400px;
+    min-height: 350px;
+
+}
