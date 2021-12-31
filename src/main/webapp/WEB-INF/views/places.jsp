@@ -47,7 +47,7 @@
     <div class="cards">
  <c:forEach var="cardData" items="${data}">
     <div class="card" onclick="window.location='/city?city=${cardData.city}'">
-        <img src="../images/visakhapatnam.jpg" width="270" height="300" style="border-top-left-radius: 5%;
+        <img src="${cardData.image}" width="270" height="300" style="border-top-left-radius: 5%;
             border-top-right-radius: 5%;"><br>
         <div class="caption">
             ${cardData.city}

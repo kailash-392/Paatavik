@@ -30,7 +30,7 @@ a{
     color: #d0d0d0;
     text-align: center;
 }
-.navbar .content p{
+.navbar .content p, span{
     font-size: 11px;
     cursor:pointer;
 }
@@ -48,18 +48,19 @@ a{
 <div class = "navbar">
     <h3>Paatavik</h3>
     <div class="content">
-        <p>
-        <span class="material-icons">home</span><br>
-        Home</p>
-        <p>
-        <span class="material-icons">map</span><br>
-        Map</p>
-        <p><span class="material-icons">place</span><br>
-        Places</p>
-        <p><span class="material-icons">explore</span><br>
-        Explore</p>
-        <p><span class="material-icons">person</span><br>
-        Profile</p>
+        <a href="/home">
+            <span class="material-icons">home</span><br>
+            <p>Home</p></a>
+        <a href="#">
+            <span class="material-icons">map</span><br>
+            <p>Map</p></a>
+        <a href="/places">
+            <span class="material-icons">place</span><br>
+            <p>Places</p></a>
+        <a href="#">
+            <span class="material-icons">explore</span><br>
+            <p>Explore</p></a>
     </div>
     <a style="margin-bottom: 5%;"><span class="material-icons">logout</span><br>Logout</a>
 </div>
+

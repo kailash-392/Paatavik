@@ -7,14 +7,18 @@
 <div class = "navbar">
     <h3>Paatavik</h3>
     <div class="content">
+        <a href="/home">
         <span class="material-icons">home</span><br>
-        <p>Home</p>
+        <p>Home</p></a>
+        <a href="#">
         <span class="material-icons">map</span><br>
-        <p>Map</p>
+        <p>Map</p></a>
+        <a href="/places">
         <span class="material-icons">place</span><br>
-        <p>Places</p>
+        <p>Places</p></a>
+        <a href="#">
         <span class="material-icons">explore</span><br>
-        <p>Explore</p>
+        <p>Explore</p></a>
         <div>
 <%--            onclick = window.location="/profile?username=<%=session.getAttribute("username")%>"--%>
         <span class="material-icons">person</span><br>

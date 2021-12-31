@@ -23,6 +23,8 @@ public class place {
     private String shares;
     @Column(name = "image")
     private String image;
+    @Column(name = "card_img")
+    private String cardImage;
 
 
     public String getCity() {
@@ -81,7 +83,15 @@ public class place {
         this.image = image;
     }
 
-    public place(String city, String state, String desc, String funds, String projects, String shares, String image) {
+    public String getCardImage() {
+        return cardImage;
+    }
+
+    public void setCardImage(String cardImage) {
+        this.cardImage = cardImage;
+    }
+
+    public place(String city, String state, String desc, String funds, String projects, String shares, String image, String cardImage) {
         this.city = city;
         this.state = state;
         this.desc = desc;
@@ -89,6 +99,7 @@ public class place {
         this.projects = projects;
         this.shares = shares;
         this.image = image;
+        this.cardImage = cardImage;
     }
 
     public place(){}

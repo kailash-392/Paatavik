@@ -24,8 +24,9 @@ a{
     color: #d0d0d0;
     text-align: center;
 }
-.navbar .content p{
+.navbar .content p, span{
     font-size: 11px;
+    cursor: pointer;
 }
 
 .sidebar{
