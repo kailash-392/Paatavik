@@ -1,73 +1,13 @@
 <%--suppress ALL --%>
-<%--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">--%>
-<%--<meta name="viewport" content="width=device-width, initial-scale=1">--%>
-<style>
-    img{
-        width: 100%;
-        height: 60%;
-    }
-    .chips{
-        display: flex;
-        gap: 50px;
-        flex-direction: row;
-    }
-    .chip{
-        width: 289px;
-        height: 97px;
-        border-radius: 11px;
-        background: #fff;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.51);
-        margin-left: 8%;
-        padding: 1px;
-    }
-    .chip .title{
-        font-family: Poppins;
-        font-weight: bold;
-        font-size: 14px;
-        text-align: center;
-        color: #000;
-    }
-    .chip p{
-        text-align: center;
-    }
-    .searchBar{
-        width: 324px;
-        height: 45px;
-        border-radius: 30px;
-        background: #fff;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.26);
-        text-align: left;
-        display: flex;
-        align-items: center;
-        padding-left: 3%;
-    }
-    .categoryChips{
-        display: flex;
-        flex-wrap: wrap;
-        gap:20px;
-    }
-    .categoryChip{
-        width: 330px;
-        height: 120px;
-        background: transparent;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.26);
-        border-radius: 5%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: Poppins;
-        font-weight: 600;
-    }
-</style>
+<link rel="stylesheet" href="../css/city.css">
+
 <jsp:include page="base.jsp" />
-<div class="container">
-    <img src="${data.image}" >
+<div class="container" id="content">
+    <div class="imageContainer">
+    <img src="${data.image}">
+        <div class="centered"><h1>${data.city}</h1><p style="font-weight: bold;">${data.state}</p></div>
+    </div>
     <div align="center">
-<%--        <p style="width: 75%;--%>
-<%--         text-align: center;">Visakhapatnam is a port city and industrial center in the Indian state of Andhra Pradesh, on the Bay of Bengal. It's known for its many beaches,--%>
-<%--            including Ramakrishna Beach, home to a preserved submarine at the Kursura Submarine Museum. --%>
-<%--            Nearby are the elaborate Kali Temple and the Visakha Museum, an old Dutch bungalow housing local maritime and --%>
-<%--            historical exhibits</p>--%>
     <p style="width: 75%;">${data.desc}</p>
     </div>
     <br>
@@ -99,31 +39,30 @@
         <br><br>
         <div class="categoryChips" id = "cc">
             <div class="categoryChip">
-                <p>Education &nbsp;<span class="material-icons">school</span></p>
+                <p><a href="/educationdata?city=${data.city}&&type=Education">Education</a> &nbsp;<span class="material-icons">school</span></p>
             </div>
             <div class="categoryChip">
-                <p>Banking &nbsp;<span class="material-icons">currency_rupee</span></p>
+                <p><a href="/bankingdata?city=${data.city}&&type=Banking">Banking</a> &nbsp;<span class="material-icons">currency_rupee</span></p>            </div>
+            <div class="categoryChip">
+                <p><a href="/parksdata?city=${data.city}&&type=Parks">Parks</a> &nbsp;<span class="material-icons">park</span></p>
             </div>
             <div class="categoryChip">
-                <p>Parks &nbsp;<span class="material-icons">park</span></p>
+                <p><a href="/moviedata?city=${data.city}&&type=Movies">Movies</a> &nbsp;<span class="material-icons">movie</span></p>
             </div>
             <div class="categoryChip">
-                <p>Movies &nbsp;<span class="material-icons">movie</span></p>
+                <p><a href="/governmentdata?city=${data.city}&&type=Government">Government</a> &nbsp;<span class="material-icons">account_balance</span></p>
             </div>
             <div class="categoryChip">
-                <p>Government &nbsp;<span class="material-icons">account_balance</span></p>
+                <p><a href="/healthcaredata?city=${data.city}&&type=Healthcare">Health Care</a> &nbsp;<span class="material-icons">healing</span></p>
             </div>
             <div class="categoryChip">
-                <p>Health Care &nbsp;<span class="material-icons">healing</span></p>
+                <p><a href="/secruitydata?city=${data.city}&&type=Security">Security</a> &nbsp;<span class="material-icons">security</span></p>
             </div>
             <div class="categoryChip">
-                <p>Security &nbsp;<span class="material-icons">security</span></p>
+                <p><a href="/riskmanagementdata?city=${data.city}&&type=RiskManagement">Risk Management</a> &nbsp;<span class="material-icons">local_fire_department</span></p>
             </div>
             <div class="categoryChip">
-                <p>Risk Management &nbsp;<span class="material-icons">local_fire_department</span></p>
-            </div>
-            <div class="categoryChip">
-                <p>Food &nbsp;<span class="material-icons">fastfood</span></p>
+                <p><a href="/fooddata?city=${data.city}&&type=Food">Food</a> &nbsp;<span class="material-icons">fastfood</span></p>
             </div>
         </div>
     </div>
