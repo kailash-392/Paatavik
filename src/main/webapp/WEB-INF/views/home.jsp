@@ -17,7 +17,7 @@
         <a href="/places">
         <span class="material-icons">place</span><br>
         <p>Places</p></a>
-        <a id="explore">
+        <a id="explore" href="/city?city=${cardData.city}">
         <span class="material-icons">explore</span><br>
         <p id="explore">Explore</p></a>
         <div onclick = window.location="/profile?username=<%=session.getAttribute("username")%>">
@@ -37,18 +37,54 @@
 <div class="rightBar" style="display: none;">
     <h4>About Place</h4>
 </div>
-<div class="content" id = "content">
 
+<style>
+    .map input{
+        padding:14px;
+        width: 75%;
+        border:none;
+        outline:none;
+        width:300px;
+        font-family:montserrat;
+        font-size: 12px;
+        font-weight: 500;
+        background-color:transparent;
+        border-radius:1px;
+        border-bottom: 1px solid rgb(5, 5, 5);
+        margin-top: 10px;
+    }
+    .map .button{
+        width: 130px;
+        height: 45px;
+        background: #00362e 0% 0% no-repeat padding-box;
+        border: 1px solid #448371;
+        border-radius: 2px;
+        opacity: 1;
+        color:white;
+        cursor: pointer;
+        outline: none;
+        transition: 0.5s ease;
+        text-align: center;
+        font-family: montserrat;
+        margin-top: 10px;
+
+    }
+    .map .button:hover {
+        transform: scale(1.02);
+    }
+</style>
+<div class="content" id = "content">
+    <h2 align="center">Welcome to PAATAVIK</h2>
+<div class="map" align="center">
     <form method="post" action="/mapdata">
         <input type="text" name="location" placeholder="Enter Location">
-        <input type="submit" value="submit">
+        <input type="submit" value="submit" class="button">
     </form>
+</div>
     <c:choose>
         <c:when test="${mode=='googlemap'}">
-            <% String s[] = (String[]) request.getAttribute("location");%>
-            <%=s[0]%>
-            <%=s[1]%>
-    <script>
+            <p style="display: none;"><% String s[] = (String[]) request.getAttribute("location");%></p>
+     <script>
         let coords = {
             lat: parseFloat(<%=s[0]%>) || 39.9612,
             lng: parseFloat(<%=s[1]%>) || -82.9988,
@@ -71,7 +107,7 @@
         #map {
             height: 100%;
         }
-    </style>0
+    </style>
             <div id="map" ></div>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsZrS5LkAXAqzgVYMJQQMYOoWgYCHHZTU&callback=initMap&v=weekly" async defer></script>
         </c:when>

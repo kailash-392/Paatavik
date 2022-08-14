@@ -2,22 +2,29 @@
 <jsp:include page="base.jsp" />
 <style>
     .place-card{
-        max-width:18%;
-        min-height: 22%;
+        max-width:20%;
+        min-height: 30%;
         background: #a7b7b9;
         border-radius: 20px;
         box-shadow: 0px 3px 6px #00000030;
         padding: 2%;
 
     }
+    .webContent{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 50px;
+    }
 </style>
-<div class="container">
+<div class="webContent">
 <c:choose>
 
     <c:when test="${mode=='educationdata'}">
         <c:forEach var="place" items="${education}">
             <div class="place-card">
-            ${place.placename}<br>
+                <b>${place.placename}</b><br>
             ${place.placedesc}<br>
             ${place.placeloc}<br>
             ${place.capacity}<br>
@@ -28,12 +35,14 @@
     </c:when>
     <c:when test="${mode=='bankingdata'}">
         <c:forEach var="place" items="${banking}">
-            ${place.placename}<br>
-            ${place.placedesc}<br>
-            ${place.placeloc}<br>
-            ${place.capacity}<br>
-            ${place.rating}<br>
-            <br><br>
+            <div class="place-card">
+                <b>${place.placename}</b><br>
+                    ${place.placedesc}<br>
+                    ${place.placeloc}<br>
+                    ${place.capacity}<br>
+                    ${place.rating}<br>
+                <br><br>
+            </div>
         </c:forEach>
     </c:when>
     <c:when test="${mode=='parksdata'}">

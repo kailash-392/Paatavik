@@ -94,9 +94,9 @@ a{
         <a href="/places">
             <span class="material-icons">place</span><br>
             <p>Places</p></a>
-        <a id = "explore">
-            <span class="material-icons">explore</span><br>
-            <p>Explore</p></a>
+<%--        <a id = "explore" href="/city?city=${cardData.city}">--%>
+<%--            <span class="material-icons">explore</span><br>--%>
+<%--            <p>Explore</p></a>--%>
         <div onclick = window.location="/profile?username=<%=session.getAttribute("username")%>">
             <%--            onclick = window.location="/profile?username=<%=session.getAttribute("username")%>"--%>
             <span class="material-icons">person</span><br>
@@ -112,7 +112,7 @@ a{
 <%--</div>--%>
 <script>
     const sideBar = document.getElementById("sidebar")
-    const ele = document.getElementById("explore")
+    // const ele = document.getElementById("explore")
 
     ele.onclick = function () {
         if (sideBar.style.display !== "none") {
